@@ -1,5 +1,5 @@
 <h1>My test project</h1>
-<h3>As an object of testing, I took the anime site https://smotret-anime.online/.</h3>
+<h3>As an object of testing, I took the <a href='https://smotret-anime.online/'>anime site</a></h3>
 
 What I used:
 <ul>
