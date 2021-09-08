@@ -21,13 +21,17 @@ public class MainPage extends BasePage {
     private final By animeRuNameButtonItems = By.xpath("//div[@class='card m-catalog-item m-catalog-item_small hoverable']//child::h5/a");
     private final By animeEnNameButtonItems = By.xpath("//div[@class='card m-catalog-item m-catalog-item_small hoverable']//child::h4/a");
 
-    private final By SignInOrSignUpButton = By.xpath("//a[@class='green darken-4 white-text waves-effect waves-light btn-large']");
+    private final By signInOrSignUpButton = By.xpath("//a[@class='green darken-4 white-text waves-effect waves-light btn-large']");
 
     public void EnterTheNameOfTheAnimeInTheSearchInput(){
         driver
                 .findElement(searchInput)
                 .sendKeys("Врата Штейна");
-        driver.findElement(searchButton)
+    }
+
+    public void clickSearchButton(){
+        driver
+                .findElement(searchButton)
                 .click();
     }
 
@@ -82,5 +86,11 @@ public class MainPage extends BasePage {
                 .findElements(animeEnNameButtonItems)
                 .get(0)
                 .getText();
+    }
+
+    public void clickSignInOrSignUpButton(){
+        driver
+                .findElement(signInOrSignUpButton)
+                .click();
     }
 }
