@@ -7,12 +7,13 @@ import tests.base.BaseTest;
 
 import static constants.Constant.Urls.BASE_URL;
 
-public class MainPageTest extends BaseTest {
+public class MainPagePTest extends BaseTest {
 
     @Test
     public void searchByNameTest(){
         basePage.goToUrl(BASE_URL);
         mainPage.EnterTheNameOfTheAnimeInTheSearchInput();
+        mainPage.clickSearchButton();
         basePage.waitElementIsVisible(driver.findElement(By.xpath("//h1[text() = 'Поиск аниме по названию']")));
         String animeName = driver.findElement(By.xpath("//div[@class='items'][1]//div[@class='col s12'][1]//h2//a")).getText();
         Assertions.assertEquals("Врата Штейна", animeName);
@@ -70,6 +71,13 @@ public class MainPageTest extends BaseTest {
         basePage.waitElementIsVisible(driver.findElement(By.xpath("//h2[@class='line-1']"))).isDisplayed();
         Assertions.assertEquals(ruAnimeName, mangaPage.getRuAnimeName());
         Assertions.assertEquals(enAnimeName, mangaPage.getEnAnimeName());
+    }
+
+    @Test
+    public void checkRedirectToSignInAndSignUpPage(){
+        basePage.goToUrl(BASE_URL);
+        mainPage.clickSignInOrSignUpButton();
+        basePage.waitElementIsVisible(driver.findElement(By.xpath("//div[@class='card'][1]//h2")));
     }
 
 }
