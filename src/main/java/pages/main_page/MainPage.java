@@ -53,21 +53,21 @@ public class MainPage extends BasePage {
                 .click();
     }
 
-    public void clickAnimeImgItems(){
+    public void clickFirstAnimeImg(){
         driver
                 .findElements(animeImgItems)
                 .get(0)
                 .click();
     }
 
-    public void clickAnimeRuNameButtonItems(){
+    public void clickFirstAnimeRuNameButton(){
         driver
                 .findElements(animeRuNameButtonItems)
                 .get(0)
                 .click();
     }
 
-    public void clickAnimeEnNameButtonItems(){
+    public void clickFirstAnimeEnNameButton(){
         driver
                 .findElements(animeEnNameButtonItems)
                 .get(0)

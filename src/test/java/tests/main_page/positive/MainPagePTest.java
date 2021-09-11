@@ -45,7 +45,7 @@ public class MainPagePTest extends BaseTest {
         basePage.goToUrl(BASE_URL);
         String ruAnimeName = mainPage.getFirstAnimeNameRu();
         String enAnimeName = mainPage.getFirstAnimeNameEn();
-        mainPage.clickAnimeImgItems();
+        mainPage.clickFirstAnimeImg();
         basePage.waitElementIsVisible(driver.findElement(By.xpath("//h2[@class='line-1']"))).isDisplayed();
         Assertions.assertEquals(ruAnimeName, mangaPage.getRuAnimeName());
         Assertions.assertEquals(enAnimeName, mangaPage.getEnAnimeName());
@@ -56,7 +56,7 @@ public class MainPagePTest extends BaseTest {
         basePage.goToUrl(BASE_URL);
         String ruAnimeName = mainPage.getFirstAnimeNameRu();
         String enAnimeName = mainPage.getFirstAnimeNameEn();
-        mainPage.clickAnimeRuNameButtonItems();
+        mainPage.clickFirstAnimeRuNameButton();
         basePage.waitElementIsVisible(driver.findElement(By.xpath("//h2[@class='line-1']"))).isDisplayed();
         Assertions.assertEquals(ruAnimeName, mangaPage.getRuAnimeName());
         Assertions.assertEquals(enAnimeName, mangaPage.getEnAnimeName());
@@ -67,7 +67,7 @@ public class MainPagePTest extends BaseTest {
         basePage.goToUrl(BASE_URL);
         String ruAnimeName = mainPage.getFirstAnimeNameRu();
         String enAnimeName = mainPage.getFirstAnimeNameEn();
-        mainPage.clickAnimeEnNameButtonItems();
+        mainPage.clickFirstAnimeEnNameButton();
         basePage.waitElementIsVisible(driver.findElement(By.xpath("//h2[@class='line-1']"))).isDisplayed();
         Assertions.assertEquals(ruAnimeName, mangaPage.getRuAnimeName());
         Assertions.assertEquals(enAnimeName, mangaPage.getEnAnimeName());
