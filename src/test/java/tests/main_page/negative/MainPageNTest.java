@@ -15,7 +15,7 @@ import static constants.Constant.Urls.BASE_URL;
 public class MainPageNTest extends BaseTest {
 
     @Test()
-    public void SendEmptySearchInput1(){
+    public void SendEmptySearchInput(){
         basePage.goToUrl(BASE_URL);
         mainPage.clickSearchButton();
         basePage.waitElementIsVisible(driver.findElement(By.xpath("//h1[text()='Поиск аниме по названию']")));
@@ -24,5 +24,4 @@ public class MainPageNTest extends BaseTest {
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
         Assertions.assertTrue(items.isEmpty());
     }
-
 }
