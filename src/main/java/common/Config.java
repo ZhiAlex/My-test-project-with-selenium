@@ -10,5 +10,4 @@ public class Config {
     public static final Boolean CLEAR_SCREENSHOT_DIR = true;
     //Clear the directory with screenshots before starting the build
     public static final Boolean CLEAR_ALLURE_RESULTS_DIR = true;
-
 }
