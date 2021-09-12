@@ -3,12 +3,7 @@ package tests.manga_page.positive;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import tests.base.BaseTest;
-
-import java.util.List;
-import java.util.Locale;
 
 import static constants.Constant.Urls.BASE_URL;
 
