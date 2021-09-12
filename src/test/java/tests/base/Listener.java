@@ -1,5 +1,6 @@
 package tests.base;
 
+import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
@@ -17,9 +18,13 @@ public class Listener implements TestWatcher {
 
     @Override
     public void testFailed(ExtensionContext context, Throwable cause){
-        LOGGER.info("Test {} filed!", context.getTestMethod().get().getName());
-        String screenshotName = context.getTestMethod().get().getName() + String.valueOf(System.currentTimeMillis()).substring(9);
+        LOGGER.info("Test {} filed", context.getTestMethod().get().getName());
+
+        String screenshotName = context.getTestMethod().get().getName()
+                + String.valueOf(System.currentTimeMillis()).substring(9,13);
+
         LOGGER.info("Trying to trace screenshot...");
+
         TakesScreenshot ts = (TakesScreenshot) ((BaseTest) context.getRequiredTestInstance()).driver;
 
         File source = ts.getScreenshotAs(OutputType.FILE);
@@ -27,9 +32,14 @@ public class Listener implements TestWatcher {
         try{
             FileUtils.copyFile(source, new File("build/reports/tests/" + screenshotName + ".png"));
         } catch (IOException e){
-            LOGGER.info("Exception on saving screenshot!");
+            LOGGER.info("Exception on saving screenshot");
             e.printStackTrace();
         }
+        attachScreenshotToAllure(ts);
     }
 
+    @Attachment
+    public static byte[] attachScreenshotToAllure(TakesScreenshot takesScreenshot){
+        return takesScreenshot.getScreenshotAs(OutputType.BYTES);
+    }
 }
