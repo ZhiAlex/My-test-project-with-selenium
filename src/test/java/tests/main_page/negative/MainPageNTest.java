@@ -15,7 +15,7 @@ import static constants.Constant.Urls.BASE_URL;
 public class MainPageNTest extends BaseTest {
 
     @Test()
-    public void SendEmptySearchInput(){
+    public void sendEmptySearchInput(){
         basePage.goToUrl(BASE_URL);
         mainPage.clickSearchButton();
         basePage.waitElementIsVisible(driver.findElement(By.xpath("//h1[text()='Поиск аниме по названию']")));
